@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/eureka-provide1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/feign-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-accessory" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-comment" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-movie" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-news" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video-user-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zull-video" charset="UTF-8" />
+  </component>
+</project>

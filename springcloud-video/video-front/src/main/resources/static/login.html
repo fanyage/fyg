@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>电影</title>
+  <link rel="stylesheet" href="css/login.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script>
+        function changeImage() {
+            $("#captchaImage").attr({"src":"http://192.168.12.61:8089/video_user/user/getCode?w="+Math.random()})
+        }
+        function login() {
+            var userName=$("[name='Username']").val();
+            var userPwd=$("[name='Password']").val();
+            var code=$("[name='code']").val();
+            if (userName!=""){
+                if (userPwd!=null){
+                    if (code!=""){
+                        $.post(
+                            "http://192.168.12.61:8089/video_user/user/login",
+                            {
+                                "userName":userName,
+                                "userPwd":userPwd,
+                                "code":code
+                            },
+                            function (data) {
+                                if(data.status==1000){
+                                }else{
+                                    //把用户信息存入会话sessionStorage
+                                    window.sessionStorage.setItem("userId",data.data);
+                                    location.href="/movies.html"
+                                }
+                            }
+                        )
+                    } else{
+                        alert("验证码必填")
+                    }
+                } else{
+                    alert("密码为必填")
+                }
+            } else{
+                alert("用户名必填")
+            }
+
+        }
+
+        function toRegister() {
+            location.href="/register.html";
+        }
+    </script>
+</head>
+<body class="login-bg">
+    <canvas id="fullstarbg">你的浏览器不支持canvas标签</canvas>
+    <div class="login">
+        <div class="message">电影系统登录</div>
+        <div id="darkbannerwrap"></div>
+        <form method="post" class="layui-form" >
+            <input name="Username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+            <hr class="hr15">
+            <input name="Password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+            <hr class="hr15">
+            <img id="captchaImage" style="height: 45px;width: 105px" class="captchaImage"  src="http://192.168.12.61:8065/user/getCode" >
+            <a href="javascript:;" onclick="changeImage()">看不清?换个眼吧</a>
+            <input name="code" lay-verify="required" placeholder="验证码"  type="text" class="layui-input">
+            <hr class="hr15">
+            <input value="登录" lay-submit lay-filter="login" style="width:100%;" onclick="login()" type="button">
+            <hr class="hr15">
+            <input value="注册" lay-submit lay-filter="login" style="width:100%;" onclick="toRegister()" type="button">
+            <hr class="hr20" >
+        </form>
+    </div>
+    <script>
+            layui.use(['form'],
+            function() {
+                $ = layui.jquery;
+                var form = layui.form(),
+                layer = layui.layer;
+                //监听提交
+                form.on('submit(login)',
+                function(data) {
+                    return false;
+                });
+
+            });
+
+        </script>
+
+
+    <!-- 底部结束 -->
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>电影注册</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script>
+        //向手机发送验证码
+        function sendCode() {
+            var phone=$("[name='phone']").val();
+            if (phone!=""){
+                $.post(
+                    "http://192.168.12.61:8089/video_user/user/sendCode",
+                    {"phone":phone},
+                    function (data) {
+                        if (data.status!=200){
+                            alert("遇到一个不可预知的问题,请稍后重试!")
+                        }
+                    }
+                )
+            } else{
+                alert("请填写手机号~")
+            }
+        }
+
+        //注册
+        function register() {
+            //获取用户名
+            var userName=  $("[name='userName']").val()
+            //获取密码
+            var userPwd = $("[name='userPwd']").val();
+            //确认密码
+            var userPwd1 = $("[name='userPwd1']").val();
+            //手机号
+            var phone = $("[name='phone']").val()
+            //验证码
+            var code = $("[name='code']").val();
+            if (userName!=""){
+                if (userPwd!=""){
+                    if (userPwd1!=""){
+                        if(phone!=""){
+                            if(code!=""){
+                                if (userPwd==userPwd1){
+                                    $.post(
+                                        "http://192.168.12.61:8089/video_user/user/register",
+                                        {
+                                            "userName":userName,
+                                            "userPwd":userPwd,
+                                            "phone":phone,
+                                            "code":code
+                                        },
+                                        function (data) {
+                                            if (data.status!=200){
+                                               alert(data.msg)
+                                            }else{
+                                                location.href="./login.html"
+                                            }
+                                        }
+                                    )
+                                } else{
+                                    alert("两次密码必须一致~")
+                                }
+                            }else{
+                                alert("验证码不允许为空~")
+                            }
+                        }else{
+                            alert("手机号码不允许为空~")
+                        }
+                    } else{
+                        alert("确认密码也不允许为空哦~")
+                    }
+                } else{
+                    alert("密码不允许为空哦~")
+                }
+            } else{
+                alert("用户名不允许为空哦~")
+            }
+
+        }
+
+    </script>
+</head>
+<body class="login-bg">
+<canvas id="fullstarbg">你的浏览器不支持canvas标签</canvas>
+<div class="login">
+    <div class="message">电影系统注册</div>
+    <div id="darkbannerwrap"></div>
+    <form method="post" class="layui-form" >
+        <input name="userName" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+        <hr class="hr15">
+        <input name="userPwd" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+        <hr class="hr15">
+        <input name="userPwd1" lay-verify="required" placeholder="确认密码"  type="password" class="layui-input">
+        <hr class="hr15">
+        <input name="phone" lay-verify="required" placeholder="手机号码"  type="text" class="layui-input">
+        <hr class="hr15">
+        <button type="button" class="layui-btn layui-btn-normal" onclick="sendCode()" >向手机发送验证码</button>
+        <hr class="hr15">
+        <input name="code" lay-verify="required" placeholder="手机验证码"  type="text" class="layui-input">
+        <hr class="hr15">
+        <input value="注册" lay-submit lay-filter="login" style="width:100%;" onclick="register()" type="button">
+        <hr class="hr20" >
+    </form>
+</div>
+<script>
+    layui.use(['form'],
+        function() {
+            $ = layui.jquery;
+            var form = layui.form(),
+                layer = layui.layer;
+            //监听提交
+            form.on('submit(login)',
+                function(data) {
+
+                    return false;
+                });
+        });
+
+</script>
+</body>
+</html>

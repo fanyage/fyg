@@ -1,0 +1,612 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>视频详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+    <!-- //bootstrap -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--start-smoth-scrolling-->
+    <!-- fonts -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <link rel="icon" href="mjs/shop/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="mjs/shop/css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="mjs/shop/css/pages-JD-index.css" />
+    <link rel="stylesheet" type="text/css" href="mjs/shop/css/widget-jquery.autocomplete.css" />
+    <link rel="stylesheet" type="text/css" href="mjs/shop/css/widget-cartPanelView.css" />
+    <link rel="stylesheet" type="text/css" href="mjs/layui/css/layui.css" />
+    <link href="js/comment_js/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="js/comment_js/css/wangEditor.css">
+    <link type="text/css" rel="stylesheet" href="js/comment_js/css/shCoreEclipse.css">
+    <link rel="stylesheet" type="text/css" href="js/comment_js/css/pifu.css">
+    <link href="js/comment_js/css/my.css" rel="stylesheet" media="screen">
+    <link href="js/comment_js/css/dl.css" rel="stylesheet" media="screen">
+    <script src="mjs/jquery-3.3.1.js"></script>
+    <!--<script src="mjs/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="mjs/jquery.cookie.min.js"></script>
+    <script src="mjs/bootbox/bootbox.min.js"></script>
+    <script src="mjs/bootbox/bootbox.locales.min.js"></script>
+    <script src="mjs/common/nav3.js"></script>
+    <script src="mjs/layui/layui.js"></script>
+    <script src="js/comment_js/js/push.js"></script>
+    <script src="js/comment_js/js/hm.js"></script>
+    <script src="js/nav3.js"></script>
+    <script src="js/leftvideo.js"></script>
+    <script src="js/footer.js"></script>
+    <script>var n = 1;</script>
+    <!--<script src="/js/comment_js/js/m.js"></script>-->
+    <script type="text/javascript" src="js/comment_js/kindeditor/kindeditor-all-min.js"></script>
+</head>
+<style>
+    .project-header p{line-height:30px}.project-header h1{line-height:50px}
+    .project-content{padding-right:3.1%;padding-left:3.1%;background-color:#fff;padding-top:10px;}
+    .pl .plul{word-wrap:break-word;width:100%;padding-top:10px;padding-bottom:10px;font-size:14px;background-color:#fafafa;}
+    .z13{font-size:13px}.plbg{background-color:#fafafa;border-bottom:1px dotted #DCDCDC;}.pl{padding:0px;}
+    a{color:#000;text-decoration:none;}a:hover{color:#337ab7;text-decoration:none;}
+    .project-header .yw{color:#009ade}.in100,.in2,.huif{border-top:0px}.huif{padding-top:0px}
+    .y{animation-delay:2s;animation:move 3s infinite;}@keyframes move{0%{border:1px solid #e8e8e8;}50%{border:1px solid #f96c65;}100%{border:1px solid #e8e8e8;}}
+    .zuo h4{line-height:36px;font-size:16px;font-weight:bold}
+    .zuo a{display:block;line-height:26px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .project-header2{width:921px;border-bottom:1px solid #e8e8e8;border-radius:3px 3px 0 0;border-top:1px solid #fff;height:auto;margin:auto;padding:20px 25px 0;z-index:9;
+        background-color:#fff}.affix-top{top:121px}.adcssb{border:1px solid #93d0a8}.foot a{color:#337ab7}textarea{outline:none;border:0px;transition:1s;border:1px solid #DDDDDD;-moz-box-shadow:2px 2px 4px #f5f5f5 inset;-webkit-box-shadow:2px 2px 4px #f5f5f5 inset;box-shadow:2px 2px 4px #f5f5f5 inset;padding:10px}textarea:focus{outline:none !important;background-color:#fafbf5;border:1px solid #4ca957;-moz-box-shadow:2px 2px 4px #e8e9e4 inset;-webkit-box-shadow:2px 2px 4px #e8e9e4 inset;box-shadow:2px 2px 4px #e8e9e4 inset;}textarea::-webkit-input-placeholder{color:#A4A4A4;}textarea::-moz-placeholder{color:#A4A4A4;}textarea:-moz-placeholder{color:#A4A4A4;}textarea:-ms-input-placeholder{color:#A4A4A4;}.btn-primary{color:#fff;background-color:#3ab143;border-color:#399c3f;}
+</style>
+<body>
+<div id="navDiv"></div>
+<div id="leftVideoDiv"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="main-grids">
+    <div class="show-top-grids">
+        <div class="col-sm-9 show-grid-left main-grids">
+                <div class="layui-col-xs11 layui-col-md9">
+                   <!---->
+
+
+                    <div class="layui-col-md9">
+                        <!--评论区-->
+                        <!--回复模态框-->
+                        <!-- 模态框（Modal） -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <textarea rows="20px" cols="50px" name="" id="ddd" style="display: none; width: 100%;"></textarea>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary" onclick = "hftj()">确认回复</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                        <div class="container m0 bod top70" id="zt">
+                            <div class="col-lg-10 col-md-10 col-sm-10">
+                                <div class="project">
+
+                                    <!--评论区大div-->
+                                    <div class="project-content" style="width:100%" >
+
+
+                                        <div id="parentDiv">
+                                            <div class="pl  "  id = "comment2Div" style="display: none;">
+                                                <div >
+                                                    <ul class="plbg">
+                                                        <input type="hidden" value='##commentId##' id="commentId">
+                                                        <input type="hidden" value='##userId##' id="userId">
+                                                        <div class="f z13">
+                                                            <a href="http://www.jq22.com/mem681248">
+                                                                <img style="width:50px; height:50px; border-radius:50%; " id="" src="##userPicture##">
+                                                            </a> <font color="blue">##userName##</font></div><span class="jl">0</span></ul></div>
+                                                <div class="r"><span class="z13">##commentTime##</span>
+                                                    <span onclick = "giveLike('##commentId##')">
+                                                    <img style="width:50px; height:50px; border-radius:50%; " src="./images/like1.png">
+                                                    </span><span>##commentLike##</span>
+                                                </div>
+
+                                                <div class="dr"></div>
+                                                </ul>
+                                                <ul class="plul">
+                                                    <p> ##commentContent##</p><p>
+                                                </p>
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <ul style="margin:10px 20px 30px 40px">
+                                                        <div id = "commentReplyDiv##commentId##">
+                                                            <div class="pl " id = "commentReplyDiv" style="display: none">
+                                                                <div>
+                                                                    <input type="hidden" value='/' >
+                                                                    <input type="hidden" value='##replyId##' >
+                                                                    <input type="hidden" value='##replyUserId##' >
+
+                                                                    <ul class="plbg plbg2">
+
+                                                                        <div class="f z13">
+                                                                            <img style="width:50px; height:50px; border-radius:50%; " src="##replyUserPicture##" > <a><font color="blue">##replyUserName##</font></a> 回复 <a><font color="blue">##replyUserName22##</font></a><span class="jl">0</span>
+                                                                        </div>
+                                                                        <div class="r"><span class="z12">##replyTime##</span></div>
+                                                                        <div class="dr"></div>
+                                                                    </ul>
+                                                                    <ul style="margin:10px 20px 30px 40px">
+                                                                        <p >##replyContent##</p>
+
+                                                                        <a class="hf" onclick="popupReply('##commentId##','##replyUserId##')" data-toggle="modal" data-target="#myModal">
+                                                                            <font size="2">回复&nbsp;&nbsp;&nbsp;</font></a>
+
+                                                                        <div class = "rep##replyUserId##" style="display: none">
+                                                                            <a class="hf" style="" onclick="deleteReply('##replyId##')"><font size="2">&nbsp;&nbsp;删除</font></a>
+                                                                        </div>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                    <a class="hf" onclick="popupReply('##commentId##','##userId##')" data-toggle="modal" data-target="#myModal">回复&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                    <a class="hf" style="" onclick="deleteComment('##userId##','##commentId##')"><font size="2">&nbsp;&nbsp;删除</font></a>
+
+                                                    <div class="lyhf"></div>
+                                                    <div class="dr"></div>
+                                                </ul>
+
+                                                <font>------------------------------------------------------------------------------
+                                                    ------------------------------------------</font>
+                                            </div>
+                                        </div><br><br>
+
+
+                                    </div>
+                                    <input type="hidden" id = "cid">
+                                    <input type="hidden" id = "rid">
+                                    <div class="posts-nav-wrap">
+                                        <ul class="posts-nav">
+                                            <li class="next"><a href="http://www.jq22.com/message13857?PageNo=2" class="next">←</a></li>
+                                        </ul>
+                                    </div>
+                                    <h4 name="a1">讨论这个影视 <span class="z14 r"><a href="http://www.jq22.com/zlgytest.aspx">评论用户自律公约</a></span></h4>
+                                    <div class="in2">
+                                        <div id="err" class="alert alert-danger" role="alert" style="display: none"><i class="fa fa-smile-o"></i>登录后才可以评论</div>
+                                        <div id="err2" class="alert alert-warning" role="alert" style="display: none"><i class="fa fa-smile-o"></i>30秒后在评论吧!</div>
+                                        <textarea id="ccc" style="height: 200px; width: 100%;" placeholder="您有什么想法要说的吗？" spellcheck="false"></textarea>
+                                        <div class="r top10">
+                                            <button onclick="getPlainTxt()" type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                                                发表评论
+                                            </button>
+                                        </div>
+                                        <div class="dr"></div>
+                                    </div>
+                                    <div class="huif" style="top: 356px; display: none;" id = "aaa">
+                                        <textarea id="textarea2" style="height: 150px; width: 100%;" placeholder="期待您的回复！" spellcheck="false"></textarea>
+                                        <button onclick="hftj()" type="button" class="btn lyhfbt btn-primary top10">回复</button>
+                                        <a class="qxhf" onclick="qx()">取消回复</a>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-2 visible-lg " style="width: 200px">
+
+                            <div class="df"></div>
+                        </div>
+                        <div class="itop" style="display: none;"></div>
+
+                        <script type="text/javascript" charset="utf-8">
+                            function GetQueryString(name) {
+                                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                                var r = window.location.search.substr(1).match(reg);
+                                if (r != null) return (r[2]); return null;
+                            }
+                            var userIds = sessionStorage.getItem("userId");
+                            if (GetQueryString("pl") == "y") {
+                                $("html,body").animate({ scrollTop: $(".y").offset().top - 160 }, 1000);
+                            }
+                            $(".wen").each(function () {
+                                $(this).html($(this).html().substr(0, 65));
+                                $(this).html($(this).html().replace("<p>", ""))
+                            });
+                            $(".jl").each(function () {
+                                if ($(this).text() != "0") {
+                                    $(this).parent().parent().parent().css("border", "1px solid #93d0a8");
+                                }
+                            });
+                            $(".y").each(function () {
+                                $(this).children("ul").children(".r").prepend("<span style='color:#AC4648;font-size: 14px'>回答有奖</span>");
+                            });
+                            $("#seobut").click(function () { var seo = $("#searchtxt").val(); if (seo.length > 1) { window.location.href = "search?seo=" + seo; } });
+                            $('#searchtxt').bind('keypress', function (event) { if (event.keyCode == "13") { var seo = $("#searchtxt").val(); if (seo.length > 1) { window.location.href = "search?seo=" + seo; } } });
+
+                            var a = "13857";
+                            var b = "155488";
+                            var lytjbut = document.getElementById('myButton');
+
+                            /*评论*/
+                            function getPlainTxt() {
+                                if ($('#ccc').val().length > 5) {
+                                    lytjbut.disabled = true;
+                                }
+                                setTimeout(function () {
+
+                                    if (isLogin == true) {
+                                        myLogin($('#ccc').val());
+
+                                        var videoId = window.localStorage.getItem("movieId");
+                                        var userId = userIds;
+                                        var commentContent = $('#ccc').val();
+
+                                        $.ajax({
+                                            type: 'post',
+                                            url: 'http://192.168.12.61:8089/video_comment/comment/addComment',
+                                            data: { videoId: videoId, userId: userId, commentContent: commentContent },
+                                            dataType: 'json',
+                                            success: function (data) {
+                                                alert(data.status)
+                                                if (data.status == 200) {
+                                                    window.location.reload();
+                                                } else {
+                                                    $("#err2").css("display", "block");
+                                                    $("#err2").addClass("dou2");
+                                                }
+                                            },
+                                            error: function () { }
+                                        });
+                                    }
+                                    else {
+                                        $("#err").css("display", "block");
+                                    }
+
+                                }, 1000);
+                            }
+
+
+                            var pid;
+                            $(".hf").click(function () {
+                                pid = $(this).attr("name");
+                                $(".hf").css("padding-bottom", "10px");
+                                if ($(document).scrollTop() > 0) {
+                                    $(".huif").css({ "top": $(this).offset().top - 40, "display": "block" });
+                                } else {
+                                    $(".huif").css({ "top": $(this).offset().top - 90, "display": "block" });
+                                }
+
+                                $(this).css("padding-bottom", "215px");
+                            });
+                            function qx() {
+                                $(".hf").css("padding-bottom", "10px");
+                                $(".huif").css("display", "none");
+                            }
+
+                            //回复
+                            function hftj() {
+
+                                var userId = userIds;
+                                var jhf = document.getElementById("ddd").value;
+                                var commentId = document.getElementById("cid").value;
+                                var repId = document.getElementById("rid").value;
+                                $.ajax({
+                                    type: 'post',
+                                    url: 'http://192.168.12.61:8089/video_comment/comment/addCommentReply',
+                                    data: { "commentId": commentId, "replyContent": jhf, "replyUserId": repId ,"userId":userId},
+                                    cache: false,
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        if (data.status == 200) {
+                                            window.location.reload();
+                                        } else {
+                                            $("#err2").css("display", "block");
+                                            $("#err2").addClass("dou2");
+                                        }
+                                    },
+                                    error: function () { }
+                                });
+
+                            }
+                            function myLogin(aa) {
+                                var jhf = aa;
+                                jhf = jhf.replace(/<p><br><\/p>|<p><\/p>/gi, "");
+                                jhf = jhf.replace(/<\/?([a-o]|[q-s]|[u-z])[^>]*>/gi, "");
+                                jhf = jhf.replace(/<\/?(textarea)[^>]*>/gi, "");
+                                var encodeHTML = encodeURIComponent(jhf);
+                                if (aa.length > 3) {
+                                    var yz = $.ajax({
+                                        type: 'post',
+                                        url: '/lyadd.aspx',
+                                        data: { wz: a, nr: encodeHTML, zz: b },
+                                        cache: false,
+                                        dataType: 'text',
+                                        success: function (data) {
+                                            if (data == "y") {
+                                                window.location.href = window.location.href;
+                                            } else {
+                                                $("#err2").css("display", "block");
+                                                $("#err2").addClass("dou2");
+                                            }
+                                        },
+                                        error: function () { }
+                                    });
+                                }
+                            }
+                            function fbcj() {
+                                yh = "n";
+                                if (yh != "") {
+                                    window.location.href = "jquerySubmit.aspx";
+                                } else {
+                                    $("#myModal").modal();
+                                }
+                            }
+                            $(".jl").each(function () {
+                                if ($(this).text() > 0) {
+                                    $(this).css('display', 'inline-block');
+                                    $(this).html("评论奖励 " + $(this).text() + " jQ币");
+                                    $(this).parent().parent().parent()
+                                }
+                            });
+                            var str_before;
+                            var str_after;
+                            function getStr(string, str) {
+                                str_before = string.split(str)[0];
+                                str_after = string.split(str)[1];
+                            }
+                            getStr(window.location.href, "message");
+                            $(".col-lg-2 a").each(function () {
+                                var tempStr = $(this).attr('href');
+                                var bool = tempStr.indexOf(str_after);
+                                if (bool > 0) {
+                                    $(this).css("color", "#009fff");
+                                    $(this).css("font-weight", "bold");
+                                }
+                            });
+                            $(function () { var e = $(".itop"); $(window).scroll(function () { var t = $(document).scrollTop(); if (t > 300) { e.fadeIn("slow") } else { e.fadeOut("slow") } }); e.click(function () { $("html,body").animate({ scrollTop: 0 }, 500) }) });
+                        </script>
+                    </div>
+                    <div id="pfk"><div class="pfys"><i class="fa fa-cog " aria-hidden="true"></i><a class="pfysA pfy1" name="#222222"></a><a class="pfysA pfy2" name="#f4f4f4"></a></div></div>
+                    <script src="./评论_白色简洁htm板（推荐）_files/pifu.js.下载"></script>
+
+                    <script>
+                        var _hmt = _hmt || [];
+                        (function () {
+                            var hm = document.createElement("script");
+                            hm.src = "//hm.baidu.com/hm.js?b3a3fc356d0af38b811a0ef8d50716b8";
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(hm, s);
+                        })();
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                    </script>
+                    <style>@media screen and (max-width:930px){.nggys {display: none}}</style>
+
+                </div>
+
+
+            <div class="layui-col-xs12 layui-col-md1">
+                <div class="grid-demo grid-demo-bg1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+
+        </div>
+
+        <div id="productDiv" style="display: none;">
+            <div class="grid-demo grid-demo-bg1">
+                <img src="http://192.168.12.61:8000/##mainImage##">
+                <h3>电影名称:##produtName##</h3>
+                <p><b><font color="red">电影简介:##price##</font></b></p><br/>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="clearfix"> </div>
+<div class="drop-menu">
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+        <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+    </ul>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+<!--评论区ajax-->
+<!--查询评论及回复-->
+<script type="text/javascript" charset="utf-8">
+    /*图片路径*/
+    var imgUrl="http://192.168.12.61:8000/";
+
+    $(function(){
+        queryComment();
+        // queryAllComment();
+        $(".rep1").css("display", "block")
+
+        $(".test1").css("display", "block")
+    })
+
+    var userIds = sessionStorage.getItem("userId");
+    /*查询全部评论*/
+    function queryComment(){
+        var videoId = window.localStorage.getItem("movieId");
+
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.12.61:8089/video_comment/comment/queryComment',
+            data: {"videoId":videoId},
+            dataType: 'json',
+            success: function (data) {
+                var commentHtml = $("#comment2Div").html();
+
+                if (data.status == 200) {
+                    var commentList = data.data;
+                    for(var i=0; i<commentList.length; i++){
+                        var comment = commentList[i];
+                        var repCommentHtml = commentHtml.replace(/##userName##/g,comment.userName).
+                        replace(/##commentId##/g,comment.commentId).
+                        replace(/##commentLike##/g,comment.commentLike).
+                        replace(/##userId##/g,comment.userId).
+                        replace(/##userPicture##/g,imgUrl+comment.userPicture).
+                        replace(/##commentTime##/g,comment.commentTime).
+                        replace(/##commentContent##/g,comment.commentContent);
+
+                        $("#parentDiv").append(repCommentHtml);
+                        queryReply(comment.commentId);
+                    }
+                } else {
+                    $("#err2").css("display", "block");
+                    $("#err2").addClass("dou2");
+                }
+            },
+            error: function () { }
+        });
+
+    }
+
+    function  popupReply(commentId,userId){
+        $("#cid").val(commentId);
+        $("#rid").val(userId);
+
+    }
+
+    //文本域添加图片 表情
+    KindEditor.ready(function(K){
+        K.create("#ccc",{
+            cssPath : './comment_js/kindeditor/plugins/code/prettify.css',
+            uploadJson : './comment_js/kindeditor/jsp/upload_json.jsp',
+            fileManagerJson : './comment_js/kindeditor/jsp/file_manager_json.jsp',
+            afterBlur: function () { this.sync(); }//同步KindEditor的值到textarea文本框。
+        });
+    });
+    //文本域添加图片 表情
+    KindEditor.ready(function(K){
+        K.create("#ddd",{
+            cssPath : './comment_js/kindeditor/plugins/code/prettify.css',
+            uploadJson : './comment_js/kindeditor/jsp/upload_json.jsp',
+            fileManagerJson : './comment_js/kindeditor/jsp/file_manager_json.jsp',
+            afterBlur: function () { this.sync(); }//同步KindEditor的值到textarea文本框。
+        });
+    });
+
+
+    /*根据评论id查询回复*/
+    function queryReply(commentId){
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.12.61:8089/video_comment/comment/queryReplyByCommonId',
+            data: {"commentId": commentId},
+            dataType: 'json',
+            success: function (data) {
+                var commentReplyHtml = $("#commentReplyDiv").html();
+                var commentReplyList = data.data;
+                if (data.status == 200) {
+                    var commentReplyList = data.data;
+                    for(var j=0; j<commentReplyList.length; j++){
+
+                        var commentReply = commentReplyList[j];
+
+                        var replyCommentHtmlaaa = commentReplyHtml.replace(/##replyUserName##/g,commentReply.userName).
+                        replace(/##replyUserName22##/g,commentReply.replyUserName).
+                        replace(/##replyId##/g,commentReply.replyId).
+                        replace(/##commentId##/g,commentReply.commentId).
+                        replace(/##replyUserId##/g,commentReply.replyUserId).
+                        replace(/##replyUserId##/g,commentReply.userId).
+                        replace(/##replyUserPicture##/g,imgUrl+commentReply.userPicture).
+                        replace(/##replyTime##/g,commentReply.replyTime).
+                        replace(/##replyContent##/g,commentReply.replyContent);
+
+                        $("#commentReplyDiv"+commentId).append(replyCommentHtmlaaa);
+                    }
+                }else {
+                    $("#err2").css("display", "block");
+                    $("#err2").addClass("dou2");
+                }
+            },
+            error: function () { }
+        });
+    }
+
+    /*删除回复*/
+    function deleteReply(replyId){
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.12.61:8089/video_comment/comment/delReplyByReplyId',
+            data: {"replyId": replyId},
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 200) {
+                    window.location.reload();
+                }
+            }
+        })
+    }
+
+    /*删除评论*/
+    function deleteComment(userId,commentId){
+        if(userId==userIds){
+            $.ajax({
+                type: 'post',
+                url: 'http://192.168.12.61:8089/video_comment/comment/delCommentByCommentId',
+                data: {"commentId": commentId},
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 200) {
+                        window.location.reload();
+                    }
+                }
+            })
+        }else{
+            alert("您无权删除此评论")
+        }
+    }
+
+    /*点赞*/
+    function giveLike(commentId){
+
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.12.61:8089/video_comment/comment/giveLike',
+            data: {"commentId": commentId,"userId":userIds},
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 200) {
+                    window.location.reload();
+                }
+            }
+        })
+
+
+    }
+
+
+</script>
+</html>

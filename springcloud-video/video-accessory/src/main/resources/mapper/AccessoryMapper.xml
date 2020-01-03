@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.AccessoryMapper">
+
+	<insert id="addAccessory" parameterType="com.fh.model.Accessory">
+		insert into t_accessory (accessoryNumber,movieId,accessoryPath) values (#{accessoryNumber},#{movieId},#{accessoryPath});
+	</insert>
+
+	<select id="getAccessoryById"  resultType="com.fh.model.Accessory">
+			select * from t_accessory where accessoryId = #{accessoryId}
+	</select>
+
+	<select id="queryAccessoryId" resultType="com.fh.model.Accessory">
+			select * from t_accessory where  movieId = #{movieId} and accessoryId = #{accessoryId}
+	</select>
+
+	<update id="updateAccessory" parameterType="com.fh.model.Accessory">
+		update t_accessory set accessoryNumber=#{accessoryNumber},movieId = #{movieId},accessoryPath=#{accessoryPath} where accessoryId = #{accessoryId}
+	</update>
+
+	<delete id="deleteAccessory" parameterType="java.lang.Integer">
+		delete from t_accessory where accessoryId = #{id}
+	</delete>
+
+	<select id="queryList2" resultType="com.fh.model.Accessory">
+		select * from t_accessory where movieId = #{movieId}
+	</select>
+
+</mapper>

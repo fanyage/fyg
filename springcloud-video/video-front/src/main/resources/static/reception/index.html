@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <link rel="stylesheet" href="/mjs/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" href="/mjs/shop/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/mjs/shop/css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="/mjs/shop/css/pages-JD-index.css" />
+    <link rel="stylesheet" type="text/css" href="/mjs/shop/css/widget-jquery.autocomplete.css" />
+    <link rel="stylesheet" type="text/css" href="/mjs/shop/css/widget-cartPanelView.css" />
+    <link rel="stylesheet" type="text/css" href="/mjs/layui/css/layui.css" />
+    <script src="/mjs/jquery-3.3.1.js"></script>
+    <script src="/mjs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/mjs/jquery.cookie.min.js"></script>
+    <script src="/mjs/bootbox/bootbox.min.js"></script>
+    <script src="/mjs/bootbox/bootbox.locales.min.js"></script>
+    <script src="/mjs/common/nav3.js"></script>
+    <script src="/mjs/layui/layui.js"></script>
+    <title>视频首页</title>
+</head>
+<style>
+    #LAY-component-grid-list .demo-list .layui-card{height: 245px}
+</style>
+<body>
+<div id="navDiv"></div>
+<div class="layui-row layui-col-space10">
+    <div class="layui-col-md3" style="background: #009688">
+    </div>
+    <div class="layui-col-md6" >
+
+        <div >
+            <span   class="btn label-info">
+               <font size="2"> 类型</font>
+            </span>
+            <a href="#" onclick="initMovieList()" style="margin-left:10px;">全部</a>
+            <span id="typeName" >
+
+            </span>
+
+        </div>
+        <div style="margin-top: 10px">
+           <span   class="btn label-info">
+               <font size="2"> 地区</font>
+           </span>
+            <a href="#" onclick="initMovieList()" style="margin-left:10px;">全部</a>
+            <span id="areaName" >
+
+            </span>
+        </div>
+    </div>
+    <div class="layui-col-md3" style="background: #00FF00">
+    </div>
+</div>
+<div class="layui-row layui-col-space10">
+    <div class="layui-col-md1" style="background: #1aa5fb">
+    </div>
+    <div class="layui-col-md10">
+        <div class="layui-fluid" id="LAY-component-grid-list" >
+            <div class="layui-row layui-col-space10 demo-list">
+                    <div id="movieListDiv">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md1" style="background: #1c7ab3">
+    </div>
+</div>
+
+
+
+
+<div id="productDiv" style="display: none;">
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2">
+        <div class="layui-card">
+            <img src="http://192.168.12.61:8000/##mainImage##" style="width: 100px;height: 100px">
+            <h3>电影名称:##produtName##</h3>
+            <p><b><font color="red">电影简介:##price##</font></b></p><br/>
+            <p><a href="#" class="btn btn-primary" role="button" onclick="initNum('##id##')" style="position: absolute;bottom:0;">选中播放集数</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        initProductList();
+        queryListType();
+        queryListArea();
+    })
+    function initProductList(){
+        $.post(
+            "http://192.168.12.61:8061/moviec/queryListMovie",
+            function (data) {
+                if(data.status==200){
+                    var productList =data.data;
+                    for (var i = 0; i < productList.length; i++) {
+                        var product = productList[i];
+                        var productTemp=$("#productDiv").html();
+                       var  productHtml=  productTemp.replace(/##mainImage##/g,product.filePath)
+                        .replace(/##produtName##/g,product.movieName)
+                        .replace(/##price##/g,product.movieIntro)
+                        .replace(/##id##/g,product.movieId);
+                       $("#movieListDiv").append(productHtml);
+                    }
+                }
+            }
+        )
+    }
+    function initMovieList(){
+        $.post(
+            "http://192.168.12.61:8061/moviec/queryListMovie",
+            function (data) {
+                if(data.status==200){
+                    var productList =data.data;
+                    var str="";
+                    for (var i = 0; i < productList.length; i++) {
+                        var product = productList[i];
+                        var productTemp=$("#productDiv").html();
+                            str+=productTemp.replace(/##mainImage##/g,product.filePath)
+                            .replace(/##produtName##/g,product.movieName)
+                            .replace(/##price##/g,product.movieIntro)
+                            .replace(/##id##/g,product.movieId);
+                    }
+                    $("#movieListDiv").html(str);
+                }
+            }
+        )
+    }
+
+    function  queryListType() {
+        $.post(
+            "http://192.168.12.61:8061/moviec/queryListType",
+            function (resful) {
+                if(resful.status==200){
+                    var data=resful.data;
+                    for (var i = 0; i <data.length ; i++) {
+                        $("#typeName").append(
+                            '<a href="#" onclick="initType('+data[i].typeId+')" style="margin-left:10px;">'+data[i].typeName+'</a>'
+                        )
+                    }
+                }
+            }
+        )
+    }
+    function  queryListArea() {
+        $.post(
+            "http://192.168.12.61:8061/moviec/queryListArea",
+            function (resful) {
+                if(resful.status==200){
+                    var data=resful.data;
+                    for (var i = 0; i <data.length ; i++) {
+                        $("#areaName").append(
+                            '<a href="#" onclick="initArea('+data[i].areaId+')" style="margin-left:10px;" >'+data[i].areaName+'</a>'
+                        )
+                    }
+                }
+            }
+        )
+    }
+
+    function initType(id) {
+       $.post(
+           "http://192.168.12.61:8061/moviec/initType",
+           {"typeId":id},
+           function (rest) {
+                    if(rest.status==200){
+                        var productList =rest.data;
+                        if(productList.length>0) {
+                            var str="";
+                            for (var i = 0; i < productList.length; i++) {
+                                var product = productList[i];
+                                var productTemp = $("#productDiv").html();
+                                    str+= productTemp.replace(/##mainImage##/g, product.filePath)
+                                    .replace(/##produtName##/g, product.movieName)
+                                    .replace(/##price##/g, product.movieIntro)
+                                    .replace(/##id##/g, product.movieId);
+                            }
+                            $("#movieListDiv").html(str);
+                        }else {
+                            alert("该类型没有影片")
+                        }
+                    }
+           }
+       )
+    }
+    function initArea(id) {
+        $.post(
+            "http://192.168.12.61:8061/moviec/initArea",
+            {"areaId":id},
+            function (rest) {
+                if(rest.status==200){
+                    var productList =rest.data;
+                    if(productList.length>0) {
+                        var str=""
+                        for (var i = 0; i < productList.length; i++) {
+                            var product = productList[i];
+                            var productTemp = $("#productDiv").html();
+                            str+= productTemp.replace(/##mainImage##/g, product.filePath)
+                                .replace(/##produtName##/g, product.movieName)
+                                .replace(/##price##/g, product.movieIntro)
+                                .replace(/##id##/g, product.movieId);
+                        }
+                        $("#movieListDiv").html(str);
+                    }else {
+                        alert("该地区没有影片")
+                    }
+                }
+            }
+        )
+    }
+    
+    
+    function initNum(id) {
+            window.localStorage.setItem("movieId",id);
+        location.href="/reception/initNum.html"
+    }
+</script>
+</body>
+</html>

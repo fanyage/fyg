@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/eureka-server1/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-provide1/pom.xml" />
+        <option value="$PROJECT_DIR$/zull-video/pom.xml" />
+        <option value="$PROJECT_DIR$/video-movie/pom.xml" />
+        <option value="$PROJECT_DIR$/video-common/pom.xml" />
+        <option value="$PROJECT_DIR$/video-front/pom.xml" />
+        <option value="$PROJECT_DIR$/video-news/pom.xml" />
+        <option value="$PROJECT_DIR$/video-accessory/pom.xml" />
+        <option value="$PROJECT_DIR$/video-comment/pom.xml" />
+        <option value="$PROJECT_DIR$/video-user/pom.xml" />
+        <option value="$PROJECT_DIR$/video-user-api/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

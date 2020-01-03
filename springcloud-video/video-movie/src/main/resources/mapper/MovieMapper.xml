@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.MovieMapper">
+
+    <sql id="sql_where">
+        <where>
+
+        </where>
+
+    </sql>
+    <select id="queryList" resultType="com.fh.model.Movie" parameterType="com.fh.parm.MovieParm">
+        SELECT *  FROM  t_area,t_movie,t_type,t_user WHERE t_area.areaId=t_movie.areaId AND t_type.typeId=t_movie.typeId
+        and t_user.userId=t_movie.userId
+        <include refid="sql_where"></include>
+        limit #{start},#{length}
+
+    </select>
+
+    <select id="queryTotalCount" resultType="long" parameterType="com.fh.parm.MovieParm">
+        select count(*) from t_area,t_movie,t_type,t_user WHERE t_area.areaId=t_movie.areaId AND t_type.typeId=t_movie.typeId
+        and t_user.userId=t_movie.userId
+        <include refid="sql_where"></include>
+    </select>
+
+    <insert id="addListMovie" parameterType="com.fh.model.Movie">
+        insert into t_movie
+           (movieName,showTime,movieIntro,vipStatus,movieStatus,movieScore,count,filePath,userId,typeId,areaId)
+        values
+           (#{movieName},#{showTime},#{movieIntro},#{vipStatus},#{movieStatus},#{movieScore},#{count},#{filePath},#{userId},#{typeId},#{areaId})
+    </insert>
+
+    <select id="getMovieById" parameterType="java.lang.Integer" resultType="com.fh.model.Movie">
+        select * from  t_movie   where  movieId=#{movieId}
+    </select>
+
+
+    <update id="updateListMovie" parameterType="com.fh.model.Movie">
+        update t_movie set  movieName=#{movieName},showTime=#{showTime},movieIntro=#{movieIntro},vipStatus=#{vipStatus},
+        movieStatus=#{movieStatus},movieScore=#{movieScore},count=#{count},filePath=#{filePath},userId=#{userId},typeId=#{typeId},
+        areaId=#{areaId}  where movieId=#{movieId}
+
+    </update>
+
+    <delete id="deleteListMovie" parameterType="java.lang.Integer">
+        delete  from  t_movie  where  movieId=#{movieId}
+    </delete>
+
+    <select id="queryListType" resultType="com.fh.model.Type">
+        select * from  t_type
+    </select>
+    <select id="queryListArea" resultType="com.fh.model.Area">
+        select * from  t_area
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>视频首页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<link href="css/dashboard.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+<!--<script src="js/jquery-1.11.1.min.js"></script>-->
+<!--start-smoth-scrolling-->
+<!-- fonts -->
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<!--<link rel="stylesheet" href="/mjs/bootstrap/css/bootstrap.min.css">-->
+	<link rel="icon" href="mjs/shop/assets/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="mjs/shop/css/webbase.css" />
+	<link rel="stylesheet" type="text/css" href="mjs/shop/css/pages-JD-index.css" />
+	<link rel="stylesheet" type="text/css" href="mjs/shop/css/widget-jquery.autocomplete.css" />
+	<link rel="stylesheet" type="text/css" href="mjs/shop/css/widget-cartPanelView.css" />
+	<link rel="stylesheet" type="text/css" href="mjs/layui/css/layui.css" />
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap3/js/bootstrap.min.js"></script>
+	<script src="mjs/jquery.cookie.min.js"></script>
+	<script src="mjs/bootbox/bootbox.min.js"></script>
+	<script src="mjs/bootbox/bootbox.locales.min.js"></script>
+	<script src="mjs/layui/layui.js"></script>
+	<script src="js/nav3.js"></script>
+	<script src="js/leftNav.js"></script>
+	<script src="js/footer.js"></script>
+
+	<!-- //fonts -->
+	<!-- pop-up-box -->
+	<script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+	<!--//pop-up-box -->
+</head>
+<style>
+	#LAY-component-grid-list .demo-list .layui-card{height: 245px}
+</style>
+  <body>
+
+  <div id="navDiv"></div>
+  <div id="leftNavDiv"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="show-top-grids">
+				<div class="col-sm-10 show-grid-left main-grids">
+
+					<div class="recommended" >
+						<div class="recommended-grids english-grid">
+							<div class="recommended-info">
+								<div class="heading">
+									<h3>video</h3>
+								</div>
+								<div class="heading-right">
+									<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="layui-col-md6" >
+
+								<div >
+           						 <span   class="btn label-info">
+               					<font size="2"> 类型</font>
+           						 </span>
+									<a href="#" onclick="initMovieList()" style="margin-left:10px;">全部</a>
+									<span id="typeName" >
+
+           						 </span>
+
+								</div>
+								<div style="margin-top: 10px">
+          						 <span   class="btn label-info">
+              					 <font size="2"> 地区</font>
+           						</span>
+									<a href="#" onclick="initMovieList()" style="margin-left:10px;">全部</a>
+									<span id="areaName" ></span>
+								</div>
+							</div>
+							<div class="layui-col-md3" style="background: #00FF00">
+							</div>
+							<div class="layui-row">
+								<div class="layui-col-md1" style="background: #1aa5fb">
+								</div>
+								<div class="layui-col-md10">
+									<div class="layui-fluid" id="LAY-component-grid-list" >
+										<div >
+											<div id="movieListDiv"></div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-md1" >
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-2 show-grid-right">
+					<h3>Upcoming Channels</h3>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">English Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Chinese Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Hindi Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Telugu Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Tamil Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Kannada Movies</a></li>
+						</ul>
+					</div>
+					<div class="show-right-grids">
+						<ul>
+							<li class="tv-img"><a href="#"><img src="images/mv.png" alt="" /></a></li>
+							<li><a href="#">Marathi movies</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- footer -->
+			<div id="footerNavDiv"></div>
+			<!-- //footer -->
+		</div>
+		<div class="clearfix"> </div>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+	<div id="productDiv" style="display: none;" >
+			<div class="layui-col-sm4 layui-col-md3 layui-col-lg2">
+				<div class="layui-card">
+					<div class="resent-grid-img recommended-grid-img">
+						<a href="javascript:void(0)" onclick="initNum('##id##')"><img src="http://192.168.12.61:8000/##mainImage##" style="width: 100px;height: 100px"></a>
+						<div class="clck sports-clock">
+							<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="resent-grid-info recommended-grid-info">
+						<h5><a href="#" onclick="clickRateAdd('##newsId##')" class="title">电影名称:##produtName##</a></h5>
+						<p class="author"><a href="#" class="author">电影简介:##price##</a></p>
+					</div>
+				</div>
+			</div>
+		<div></div>
+	</div>
+    <script src="js/bootstrap.min.js"></script>
+  <!-- 导航条 -->
+  <script>
+      $(document).ready(function() {
+          $('.popup-with-zoom-anim').magnificPopup({
+              type: 'inline',
+              fixedContentPos: false,
+              fixedBgPos: true,
+              overflowY: 'auto',
+              closeBtnInside: true,
+              preloader: false,
+              midClick: true,
+              removalDelay: 300,
+              mainClass: 'my-mfp-zoom-in'
+          });
+
+      });
+  </script>
+	<script>
+
+        $(function () {
+            initProductList();
+            queryListType();
+            queryListArea();
+        });
+        function initProductList(){
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/queryListMovie",
+                function (data) {
+                    if(data.status==200){
+                        var productList =data.data;
+                        for (var i = 0; i < productList.length; i++) {
+                            var product = productList[i];
+                            var productTemp=$("#productDiv").html();
+                            var  productHtml=  productTemp.replace(/##mainImage##/g,product.filePath)
+                                .replace(/##produtName##/g,product.movieName)
+                                .replace(/##price##/g,product.movieIntro)
+                                .replace(/##id##/g,product.movieId);
+                            $("#movieListDiv").append(productHtml);
+                        }
+                    }
+                }
+            )
+        }
+        function initMovieList(){
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/queryListMovie",
+                function (data) {
+                    if(data.status==200){
+                        var productList =data.data;
+                        var str="";
+                        for (var i = 0; i < productList.length; i++) {
+                            var product = productList[i];
+                            var productTemp=$("#productDiv").html();
+                            str+=productTemp.replace(/##mainImage##/g,product.filePath)
+                                .replace(/##produtName##/g,product.movieName)
+                                .replace(/##price##/g,product.movieIntro)
+                                .replace(/##id##/g,product.movieId);
+                        }
+                        $("#movieListDiv").html(str);
+                    }
+                }
+            )
+        }
+
+        function  queryListType() {
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/queryListType",
+                function (resful) {
+                    if(resful.status==200){
+                        var data=resful.data;
+                        for (var i = 0; i <data.length ; i++) {
+                            $("#typeName").append(
+                                '<a href="#" onclick="initType('+data[i].typeId+')" style="margin-left:10px;">'+data[i].typeName+'</a>'
+                            )
+                        }
+                    }
+                }
+            )
+        }
+        function  queryListArea() {
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/queryListArea",
+                function (resful) {
+                    if(resful.status==200){
+                        var data=resful.data;
+                        for (var i = 0; i <data.length ; i++) {
+                            $("#areaName").append(
+                                '<a href="#" onclick="initArea('+data[i].areaId+')" style="margin-left:10px;" >'+data[i].areaName+'</a>'
+                            )
+                        }
+                    }
+                }
+            )
+        }
+
+        function initType(id) {
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/initType",
+                {"typeId":id},
+                function (rest) {
+                    if(rest.status==200){
+                        var productList =rest.data;
+                        if(productList.length>0) {
+                            var str="";
+                            for (var i = 0; i < productList.length; i++) {
+                                var product = productList[i];
+                                var productTemp = $("#productDiv").html();
+                                str+= productTemp.replace(/##mainImage##/g, product.filePath)
+                                    .replace(/##produtName##/g, product.movieName)
+                                    .replace(/##price##/g, product.movieIntro)
+                                    .replace(/##id##/g, product.movieId);
+                            }
+                            $("#movieListDiv").html(str);
+                        }else {
+                            alert("该类型没有影片")
+                        }
+                    }
+                }
+            )
+        }
+        function initArea(id) {
+            $.post(
+                "http://192.168.12.61:8089/video_movie/moviec/initArea",
+                {"areaId":id},
+                function (rest) {
+                    if(rest.status==200){
+                        var productList =rest.data;
+                        if(productList.length>0) {
+                            var str="";
+                            for (var i = 0; i < productList.length; i++) {
+                                var product = productList[i];
+                                var productTemp = $("#productDiv").html();
+                                str+= productTemp.replace(/##mainImage##/g, product.filePath)
+                                    .replace(/##produtName##/g, product.movieName)
+                                    .replace(/##price##/g, product.movieIntro)
+                                    .replace(/##id##/g, product.movieId);
+                            }
+                            $("#movieListDiv").html(str);
+                        }else {
+                            alert("该地区没有影片")
+                        }
+                    }
+                }
+            )
+        }
+
+
+        function initNum(id) {
+            window.localStorage.setItem("movieId",id);
+            location.href="/initNum.html"
+        }
+	</script>
+  </body>
+</html>

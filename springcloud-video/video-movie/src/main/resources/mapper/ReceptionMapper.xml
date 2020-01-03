@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.MovieReMapper">
+
+    <select id="queryListMovie" resultType="com.fh.model.Movie">
+        select * from  t_movie
+    </select>
+    <select id="queryListType" resultType="com.fh.model.Type">
+        select * from  t_type
+    </select>
+    <select id="queryListArea" resultType="com.fh.model.Area">
+        select * from  t_area
+    </select>
+
+
+    <select id="initType" resultType="com.fh.model.Movie" parameterType="java.lang.Integer">
+        select * from  t_movie where typeId=#{typeId}
+    </select>
+
+    <select id="initArea" resultType="com.fh.model.Movie" parameterType="java.lang.Integer">
+        select * from  t_movie where areaId=#{areaId}
+    </select>
+    <select id="initNum" resultType="com.fh.model.Movie" parameterType="java.lang.Integer">
+        select * from  t_movie where movieId=#{movieId}
+    </select>
+</mapper>

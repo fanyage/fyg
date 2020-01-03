@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.CommentMapper">
+
+    <insert id="addComment" parameterType="com.fh.model.Comment">
+        insert into t_comment(commentContent,commentTime,commentLike,commentLook,videoId,userId,userName,userPicture) values
+        (#{commentContent},#{commentTime},#{commentLike},#{commentLook},#{videoId},#{userId},#{userName},#{userPicture})
+    </insert>
+
+    <select id="queryComment" resultType="com.fh.model.Comment" parameterType="java.lang.Integer">
+        select * from t_comment where videoId = #{videoId}
+    </select>
+
+    <select id="queryReplyByCommentId" resultType="com.fh.model.CommentReply" parameterType="java.lang.Integer">
+        select * from t_commentreply where commentId = #{commentId}
+    </select>
+
+    <insert id="addCommentReply" parameterType="com.fh.model.CommentReply">
+        insert into t_commentreply(replyContent,replyTime,userId,userName,userPicture,replyUserId,replyUserName,commentId) values
+        (#{replyContent},#{replyTime},#{userId},#{userName},#{userPicture},#{replyUserId},#{replyUserName},#{commentId})
+    </insert>
+
+    <delete id="delReplyByReplyId" parameterType="java.lang.Integer">
+        delete from t_commentreply where replyId = #{replyId}
+    </delete>
+
+    <delete id="delCommentByCommentId" parameterType="java.lang.Integer">
+        delete from t_comment where commentId = #{commentId}
+    </delete>
+
+    <delete id="delReplyByCommentId" parameterType="java.lang.Integer">
+        delete from t_commentreply where commentId = #{commentId}
+    </delete>
+
+    <select id="queryCommentByUserId" resultType="com.fh.model.Comment"  parameterType="java.lang.Integer">
+	  select * FROM  t_comment where userId = #{userId}
+    </select>
+
+    <select id="queryReplyByUserId" resultType="com.fh.model.CommentReply"  parameterType="java.lang.Integer">
+	  select * FROM  t_commentreply where userId = #{userId}
+    </select>
+
+    <select id="queryReplyByReplyUserId" resultType="com.fh.model.CommentReply"  parameterType="java.lang.Integer">
+	  select * FROM  t_commentreply where replyUserId = #{replyUserId}
+    </select>
+
+    <select id="queryGreatById" resultType="com.fh.model.Great" >
+	  select * FROM  t_great where commentId = #{commentId} and userId = #{userId}
+    </select>
+
+    <update id="updateCommentLike" parameterType="com.fh.model.Comment">
+      update t_comment set commentLike = #{commentLike} where commentId = #{commentId}
+    </update>
+
+    <select id="queryCommentById" resultType="com.fh.model.Comment"  parameterType="java.lang.Integer">
+	  select * FROM  t_comment where commentId = #{commentId}
+    </select>
+
+    <delete id="deleteGreatById">
+        delete from t_great where commentId = #{commentId} and userId = #{userId}
+    </delete>
+
+    <insert id="AddGreat" parameterType="com.fh.model.Comment">
+        insert into t_great(commentId ,userId) values(#{commentId},#{userId})
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-provide1" />
+        <module name="eureka-server1" />
+        <module name="feign-consumer" />
+        <module name="video-accessory" />
+        <module name="video-comment" />
+        <module name="video-common" />
+        <module name="video-front" />
+        <module name="video-movie" />
+        <module name="video-news" />
+        <module name="video-user" />
+        <module name="video-user-api" />
+        <module name="zull-video" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-consumer" target="1.8" />
+      <module name="eureka-provide1" target="1.8" />
+      <module name="eureka-server1" target="1.8" />
+      <module name="feign-consumer" target="1.8" />
+      <module name="video-accessory" target="1.8" />
+      <module name="video-comment" target="1.8" />
+      <module name="video-common" target="1.8" />
+      <module name="video-front" target="1.8" />
+      <module name="video-movie" target="1.8" />
+      <module name="video-news" target="1.8" />
+      <module name="video-user" target="1.8" />
+      <module name="video-user-api" target="1.8" />
+      <module name="zull-video" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

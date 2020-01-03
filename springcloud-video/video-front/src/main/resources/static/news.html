@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<!-- //bootstrap -->
+<link href="css/dashboard.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--start-smoth-scrolling-->
+<!-- fonts -->
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='layui/css/layui.css' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+<script src="layui/layui.js"></script>
+<script src="js/nav3.js"></script>
+<script src="js/leftNav.js"></script>
+<script src="js/footer.js"></script>
+
+</head>
+<style>
+	.SortList{
+		height: 200px;
+	}
+	.sort .all-sort-list2 .item-list{
+		min-height: 190px;
+	}
+</style>
+<style>
+	#LAY-component-grid-list .demo-list .layui-card{height: 245px}
+</style>
+  <body>
+
+  <div id="navDiv"></div>
+  <div id="leftNavDiv"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="main-grids">
+				<div class="recommended">
+					<div class="recommended-grids english-grid">
+						<div class="recommended-info">
+							<div class="heading">
+								<h3>热门新闻</h3>
+							</div>
+							<div class="heading-right">
+								<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">订阅</a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="layui-fluid" id="LAY-component-grid-list" >
+							<div class="layui-row layui-col-space10 demo-list">
+						<div  id="newsZhanshi">
+
+						</div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+
+				<div class="recommended">
+					<div class="recommended-grids">
+						<div class="recommended-info">
+							<div class="heading">
+								<h3>最新新闻</h3>
+							</div>
+							<div class="heading-right">
+								<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">订阅</a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="layui-fluid" id="LAY-component-grid-list1" >
+							<div class="layui-row layui-col-space10 demo-list">
+						<div  id="newsStatus">
+
+						</div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+
+			</div>
+			<!-- footer -->
+			<div id="footerNavDiv"></div>
+			<!-- //footer -->
+		</div>
+		<div class="clearfix"> </div>
+	<div id="newsDiv" style="display: none;" >
+		<div class="layui-col-sm4 layui-col-md3 layui-col-lg2">
+			<div class="layui-card">
+		<div class="resent-grid-img recommended-grid-img">
+			<a href="#" onclick="clickRateAdd('##newsId##')"><img src="##mainImage##" width="150px" height="150px" alt="" /></a>
+			<div class="time small-time sports-tome">
+				<p>##createTime##</p>
+			</div>
+			<div class="clck sports-clock">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+			</div>
+		</div>
+		<div class="resent-grid-info recommended-grid-info">
+			<h5><a href="#" onclick="clickRateAdd('##newsId##')" class="title">##newsContent##</a></h5>
+			<p class="author"><a href="#" class="author">##newsName##</a></p>
+			<p class="views">##clickRate## 次浏览</p>
+		</div>
+			</div>
+		</div>
+	</div>
+	<div id="newsStatusDiv" style="display: none;">
+		<div class="layui-col-sm4 layui-col-md3 layui-col-lg2">
+			<div class="layui-card">
+		<div class="resent-grid-img recommended-grid-img">
+			<a href="#" onclick="clickRateAdd('##newsId##')"><img src="##mainImage##" width="150px" height="150px" alt="" /></a>
+			<div class="time small-time sports-tome">
+				<p>##createTime##</p>
+			</div>
+			<div class="clck sports-clock">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+			</div>
+		</div>
+		<div class="resent-grid-info recommended-grid-info">
+			<h5><a href="#" onclick="clickRateAdd('##newsId##')" class="title">##newsContent##</a></h5>
+			<p class="author"><a href="#" class="author">##newsName##</a></p>
+			<p class="views">##clickRate## 次浏览</p>
+		</div>
+			</div></div>
+	</div>
+	<script>
+        var imgUrl="http://192.168.12.61:8000/";
+        $(function () {
+            initNewsList()
+            initNewsStuatusList()
+        })
+        function initNewsList(){
+            $.post(
+                "http://localhost:8062/news/queryNewsList2",
+                function(data){
+
+                    if(data.status==200){
+                        var newsList=data.data;
+                        //alert(productList);
+                        for (var i = 0; i < newsList.length; i++) {
+                            var newsTemp=$("#newsDiv").html();
+                            var newsHtml= newsTemp.replace("##mainImage##",imgUrl+newsList[i].filePath)
+                                .replace("##createTime##",newsList[i].createTime)
+                                .replace("##newsId##",newsList[i].newsId)
+                                .replace("##newsContent##",newsList[i].newsContent)
+                                .replace("##newsName##",newsList[i].newsName)
+                                .replace("##clickRate##",newsList[i].clickRate)
+                            $("#newsZhanshi").append(newsHtml);
+                        }
+                    }
+                }
+            )
+        }
+        function initNewsStuatusList(){
+            $.post(
+                "http://localhost:8062/news/initNewsStuatusList",
+                function(data){
+
+                    if(data.status==200){
+                        var newsList=data.data;
+                        //alert(productList);
+                        for (var i = 0; i < newsList.length; i++) {
+                            var newsTemp=$("#newsStatusDiv").html();
+                            var newsHtml= newsTemp.replace("##mainImage##",imgUrl+newsList[i].filePath)
+                                .replace("##createTime##",newsList[i].createTime)
+                                .replace("##newsId##",newsList[i].newsId)
+                                .replace("##newsContent##",newsList[i].newsContent)
+                                .replace("##newsName##",newsList[i].newsName)
+                                .replace("##clickRate##",newsList[i].clickRate)
+                            $("#newsStatus").append(newsHtml);
+                        }
+                    }
+                }
+            )
+        }
+        function clickRateAdd(newsId){
+            $.post(
+                "http://localhost:8062/news/clickRateAdd",
+				{"newsId":newsId},
+                function(data){
+                    if(data.status==200){
+                      location.href="/single.html";
+                    }
+                }
+            )
+		}
+	</script>
+	<div class="drop-menu">
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+		</ul>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  </body>
+</html>

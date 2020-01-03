@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fh.mapper.UserMapper">
+    <!--根据用户名称查询该用户是否存在-->
+    <select id="queryUserByName" parameterType="java.lang.String"  resultType="com.fh.model.User" >
+        SELECT U.USERID,U.USERNAME,U.USERPWD,U.PHONE,U.CREATETIME,U.USERPATH,U.USERCOUNT,u.userStatus FROM T_USER U WHERE U.USERNAME=#{userName}
+    </select>
+    <!--注册-->
+    <insert id="addUser" parameterType="com.fh.model.User" >
+        INSERT INTO T_USER (userName,userPwd,phone,userPath,createTime,userCount)
+                  VALUES (#{userName},#{userPwd},#{phone},#{userPath},#{createTime},#{userCount})
+    </insert>
+    <!--查询该手机号是否存在-->
+    <select id="queryUserByPhone" parameterType="java.lang.String" resultType="com.fh.model.User" >
+        SELECT U.USERID,U.USERNAME,U.USERPWD,U.PHONE,U.CREATETIME,U.USERPATH,U.USERCOUNT,u.userStatus FROM T_USER U WHERE U.USERNAME=#{phone}
+    </select>
+    <update id="updateUserMassage" parameterType="com.fh.model.User">
+        UPDATE T_USER  SET
+              userName=#{userName} , phone=#{phone}, userPath=#{userPath}, userCount=#{userCount} ,userStatus=#{userStatus} , userSum=#{userSum}
+                    where userid=#{userid}
+    </update>
+
+    <select id="queryUserById" parameterType="java.lang.Integer" resultType="com.fh.model.User" >
+        SELECT U.USERID,U.USERNAME,U.USERPWD,U.PHONE,U.CREATETIME,U.USERPATH,U.USERCOUNT,u.userStatus FROM T_USER U WHERE U.userid=#{userId}
+    </select>
+</mapper>

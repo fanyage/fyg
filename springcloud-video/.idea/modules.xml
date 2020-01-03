@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-provide1/eureka-provide1.iml" filepath="$PROJECT_DIR$/eureka-provide1/eureka-provide1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server1/eureka-server1.iml" filepath="$PROJECT_DIR$/eureka-server1/eureka-server1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign-consumer/feign-consumer.iml" filepath="$PROJECT_DIR$/feign-consumer/feign-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-accessory/video-accessory.iml" filepath="$PROJECT_DIR$/video-accessory/video-accessory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-comment/video-comment.iml" filepath="$PROJECT_DIR$/video-comment/video-comment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-common/video-common.iml" filepath="$PROJECT_DIR$/video-common/video-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-front/video-front.iml" filepath="$PROJECT_DIR$/video-front/video-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-movie/video-movie.iml" filepath="$PROJECT_DIR$/video-movie/video-movie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-news/video-news.iml" filepath="$PROJECT_DIR$/video-news/video-news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-user/video-user.iml" filepath="$PROJECT_DIR$/video-user/video-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/video-user-api/video-user-api.iml" filepath="$PROJECT_DIR$/video-user-api/video-user-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zull-video/zull-video.iml" filepath="$PROJECT_DIR$/zull-video/zull-video.iml" />
+    </modules>
+  </component>
+</project>
